@@ -56,12 +56,8 @@ RELATED = {
     "handle-overcharged-customer": ["pricing-errors-customer-retention", "how-to-reduce-checkout-pricing-errors", "failed-price-verification-inspection"],
 }
 
-FONTS = "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@400;600&display=swap"
 
-LOGO = ('<svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="2" width="14" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>'
-        '<path d="M6.5 7h7M6.5 11h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
-        '<circle cx="17" cy="16" r="4.5" fill="var(--mark)" stroke="currentColor" stroke-width="2"/>'
-        '<path d="M20.3 19.3 24 23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>')
+LOGO = '<img src="/images/icon-64.png" srcset="/images/icon-64.png 1x, /images/icon-128.png 2x" width="30" height="30" alt="">'
 
 
 def parse(slug):
@@ -94,7 +90,7 @@ def head(title, description, canonical, og_type="website", extra=""):
   <meta name="description" content="{e(description)}">
   <meta name="apple-itunes-app" content="app-id={APP_ID}">
   <link rel="canonical" href="{canonical}">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-48.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="{og_type}">
   <meta property="og:site_name" content="Dupe Detective">
@@ -103,9 +99,6 @@ def head(title, description, canonical, og_type="website", extra=""):
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="{FONTS}">
   <link rel="stylesheet" href="/styles.css">
 {extra}</head>"""
 

@@ -27,6 +27,12 @@ Pushing to `main` deploys the site automatically via Cloudflare.
 - Internal links use clean root-relative URLs (`/faq`, `/blog/<slug>`), matching the canonical tags.
 - When FAQ answers change, update both the visible text and the FAQPage JSON-LD in `website/faq.html`.
 
+## Design
+
+- Apple-platform product page look: system font (SF on Apple devices, no web fonts), lots of white space, the app's blue (`--accent`), real App Store screenshots in `website/images/` doing the visual work. Red (`--dupe`) is only for "duplicate".
+- Logo is the real app icon (`website/images/icon-*.png`, `favicon-48.png`, `apple-touch-icon.png`), cropped from the App Store artwork. Avoid generic AI-site tropes: monospace eyebrow labels on every section, the same split layout repeated, decorative emoji or arrows, made-up mockups.
+- Light and dark mode both supported through the tokens at the top of `website/styles.css`.
+
 ## Messaging rules (from the owner)
 
 - **Main pitch: scan your receipt before you leave the store.** It takes a few seconds, and a double charge caught at the register gets fixed on the spot instead of a bank dispute later.

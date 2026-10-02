@@ -7,7 +7,7 @@
   <meta name="description" content="Dupe Detective scans your receipts on your iPhone and flags items you were charged for twice. Receipts are processed on your device and sync through your private iCloud.">
   <meta name="apple-itunes-app" content="app-id=6773174333">
   <link rel="canonical" href="https://dupedetective.tech/">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-48.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dupe Detective: catch duplicate charges on your receipts">
@@ -16,9 +16,6 @@
   <meta property="og:site_name" content="Dupe Detective">
   <meta property="og:image" content="https://dupedetective.tech/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@400;600&display=swap">
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
   {
@@ -61,7 +58,7 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/">
-        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="2" width="14" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 7h7M6.5 11h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="16" r="4.5" fill="var(--mark)" stroke="currentColor" stroke-width="2"/><path d="M20.3 19.3 24 23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <img src="/images/icon-64.png" srcset="/images/icon-64.png 1x, /images/icon-128.png 2x" width="30" height="30" alt="">
         Dupe Detective
       </a>
       <nav class="nav" aria-label="Main">
@@ -78,98 +75,102 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-copy">
-          <p class="eyebrow">Receipt scanner for iPhone &amp; Mac</p>
-          <h1>Catch the item you paid for <span class="mark">twice</span>.</h1>
-          <p class="lede">Scan your receipt before you leave the store. In a few seconds, Dupe Detective points out anything that was rung up twice, so the cashier can fix it on the spot.</p>
+          <p class="eyebrow">Receipt scanner for iPhone, iPad and Mac</p>
+          <h1>Catch the item you paid for <span class="dupe">twice</span>.</h1>
+          <p class="lede">Scan your receipt before you leave the store. In a few seconds, Dupe Detective highlights anything rung up twice, so it gets fixed at the counter.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">
-              <svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path fill="currentColor" d="M13.2 9.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8C3.6 4.4 2.1 5.3 1.3 6.8c-1.7 2.9-.4 7.2 1.2 9.5.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.4-.9-2.4-3.9ZM10.9 2.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3Z"/></svg>
-              Download on the App Store
+            <a class="btn btn-primary btn-store" href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">
+              <svg width="22" height="26" viewBox="0 0 16 19" aria-hidden="true"><path fill="currentColor" d="M13.2 10.1c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8C3.6 4.9 2.1 5.8 1.3 7.3c-1.7 2.9-.4 7.2 1.2 9.5.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.4-.9-2.4-3.9ZM10.9 3.3c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3Z"/></svg>
+              <span><small>Download on the</small><strong>App Store</strong></span>
             </a>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
+            <a class="btn-ghost" href="#how">See how it works</a>
           </div>
-          <p class="hero-note">Try it free on iPhone and Mac, then $4.99 a year. Works with Costco, Kroger, Walmart, Sam's Club and most grocery stores.</p>
+          <p class="hero-note">3 free scans and a 7-day free trial, then $4.99 a year.</p>
         </div>
+        <div class="hero-visual">
+          <img class="tile" src="/images/01-receipt.webp" width="600" height="1304" alt="A scanned grocery receipt in Dupe Detective with the same item, Kettle Avo, highlighted in red on two lines" fetchpriority="high">
+        </div>
+      </div>
+    </section>
 
-        <figure class="receipt" aria-label="Example receipt with a duplicate item highlighted">
-          <header>
-            <strong>CORNER GROCERY</strong>
-            <span class="meta">STORE 0412 · 10/02/26 · 5:47 PM</span>
-          </header>
-          <ol>
-            <li><span>OAT MILK 64OZ</span><span>4.79</span></li>
-            <li><span>BANANAS</span><span>0.78</span></li>
-            <li class="sub"><span>1.32 LB @ 0.59/LB</span></li>
-            <li class="dupe"><span>OAT MILK 64OZ</span><span>4.79</span></li>
-            <li class="flag-row"><span class="flag">↑ Rung up twice</span></li>
-            <li><span>SOURDOUGH LOAF</span><span>5.49</span></li>
-            <li><span>EGGS LARGE DOZ</span><span>3.99</span></li>
-          </ol>
-          <hr>
-          <div class="row"><span>ITEMS</span><span>5</span></div>
-          <div class="row total"><span>TOTAL</span><span>$19.84</span></div>
-          <div class="row meta"><span>VISA ****4021</span><span>APPROVED</span></div>
-        </figure>
+    <section class="stores" aria-label="Supported stores">
+      <div class="wrap">
+        <span>Works with receipts from</span>
+        <strong>Costco</strong><strong>Kroger</strong><strong>Walmart</strong><strong>Sam's Club</strong><strong>Fry's</strong>
+        <span>and most major grocery stores</span>
       </div>
     </section>
 
     <section class="section" id="how">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">How it works</p>
-          <h2>Fix it at the register, not on the phone with your bank</h2>
-          <p>A double charge takes a minute to fix while you're still in the store. After you leave, it means calling the store or disputing it with your bank and waiting days or weeks.</p>
+          <h2>Three steps. A few seconds.</h2>
+          <p>Check the receipt while you're still at the counter, when fixing a mistake takes a minute instead of a phone call.</p>
         </div>
         <ol class="steps">
           <li>
             <img class="shot" src="/images/02-home.webp" width="600" height="1304" alt="Dupe Detective home screen with Scan Receipt and Import Receipt buttons" loading="lazy" decoding="async">
-            <h3>Scan before you leave</h3>
-            <p>Tap Scan Receipt and point your iPhone at the receipt at the counter or on the way to the door. You can also import a digital receipt. It takes a few seconds.</p>
+            <span class="num">1</span>
+            <h3>Scan the receipt</h3>
+            <p>Tap Scan Receipt and point your iPhone at the paper, or import a digital receipt.</p>
           </li>
           <li>
-            <img class="shot" src="/images/01-receipt.webp" width="600" height="1304" alt="A scanned grocery receipt with the same item, Kettle Avo, highlighted in red on two lines" loading="lazy" decoding="async">
+            <div class="detail"><img src="/images/01-receipt.webp" width="600" height="1304" alt="Close-up of a receipt with two identical lines highlighted in red" loading="lazy" decoding="async"></div>
+            <span class="num">2</span>
             <h3>See what was charged twice</h3>
-            <p>Any item that appears more than once is highlighted in red, so a double scan is easy to spot on even a long receipt.</p>
+            <p>Every line is read on your phone. Repeated items are highlighted in red, even on a long receipt.</p>
           </li>
           <li>
-            <img class="shot" src="/images/03-alerts.webp" width="600" height="1304" alt="Alerts screen listing saved receipts with the number of potential duplicates on each" loading="lazy" decoding="async">
+            <img class="shot" src="/images/03-alerts.webp" width="600" height="1304" alt="Alerts screen listing receipts with the number of potential duplicates on each" loading="lazy" decoding="async">
+            <span class="num">3</span>
             <h3>Get it fixed on the spot</h3>
-            <p>Show the highlighted line to the cashier or customer service. Every flagged receipt is also saved in Alerts, so nothing slips through.</p>
+            <p>Show the highlighted line at the register or service desk. Flagged receipts stay in Alerts.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap split features">
-        <div class="section-head">
-          <p class="eyebrow">More than a scanner</p>
-          <h2>Your grocery list and receipt history in one place</h2>
-          <p>Make your list on your Mac, and it's on your iPhone when you get to the store. While you shop, your list scrolls across the top of the app like a stock ticker, so you can see what's left at a glance. Then check the receipt and keep it for returns and warranties.</p>
-          <ul class="facts">
-            <li><span class="k">Grocery list</span><span>Syncs between your Mac and iPhone when both use the same Apple ID</span></li>
-            <li><span class="k">List ticker</span><span>Your list scrolls across the top of the app while you shop</span></li>
-            <li><span class="k">Receipt history</span><span>Review past trips, track spending and spot price changes</span></li>
-            <li><span class="k">Stores</span><span>Costco, Kroger, Fry's, Sam's Club, Walmart and most major grocery stores</span></li>
-            <li><span class="k">Price</span><span>Free to download. 3 free scans, then a 7-day free trial. Pro is $4.99 a year for unlimited scanning.</span></li>
-          </ul>
+    <section class="band">
+      <div class="wrap">
+        <blockquote>A double scan takes a minute to fix at the counter. <span>At home, it's a phone call, a drive back or a bank dispute.</span></blockquote>
+        <div class="stat">
+          <b>1 in 4</b>
+          <p>U.S. shoppers say they're overcharged at checkout at least once a month.</p>
+          <p class="source"><a href="/checkout-overcharge-statistics">University at Buffalo survey of 2,011 shoppers, fall 2025</a></p>
         </div>
-        <img class="shot" src="/images/04-grocery.webp" width="600" height="1304" alt="Dupe Detective shopping list with bread, milk, pasta, cereal and coffee, and the same items scrolling in a ticker across the top" loading="lazy" decoding="async">
       </div>
     </section>
 
     <section class="section">
-      <div class="wrap split">
-        <div class="section-head">
-          <p class="eyebrow">Privacy</p>
-          <h2>Your receipts stay yours</h2>
-          <p>Receipts are read on your device, and scanning works without an internet connection. When you sync between your iPhone and Mac, the data goes to your own private iCloud database. We can't open it, and we don't keep a copy on our servers.</p>
+      <div class="wrap split features">
+        <img class="tile" src="/images/04-grocery.webp" width="600" height="1304" alt="Dupe Detective shopping list with bread, milk, pasta, cereal and coffee, and the same items scrolling in a ticker across the top" loading="lazy" decoding="async">
+        <div>
+          <div class="section-head">
+            <h2>Plan the trip on your Mac. Shop with your iPhone.</h2>
+            <p>Your grocery list syncs between devices signed in with the same Apple ID. In the store, it scrolls across the top of the app like a stock ticker, so you can see what's left at a glance.</p>
+          </div>
+          <ul class="feature-grid">
+            <li><strong>Grocery list sync</strong><span>Mac, iPhone and iPad through iCloud</span></li>
+            <li><strong>List ticker</strong><span>What's left, always in view</span></li>
+            <li><strong>Receipt history</strong><span>Folders for returns, warranties and price changes</span></li>
+            <li><strong>Digital receipts</strong><span>Import as well as scan</span></li>
+            <li><strong>Works offline</strong><span>No connection needed to scan</span></li>
+            <li><strong>Light and dark</strong><span>Follows your system, or set it yourself</span></li>
+          </ul>
         </div>
-        <ul class="facts">
-          <li><span class="k">Scanning</span><span>On your device</span></li>
-          <li><span class="k">Sync</span><span>Your private iCloud database</span></li>
-          <li><span class="k">Who can read it</span><span>Only you. The developers have no access.</span></li>
-          <li><span class="k">Camera</span><span>Used only when you choose to scan</span></li>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Your receipts stay yours.</h2>
+          <p>We built Dupe Detective so we never see your shopping.</p>
+        </div>
+        <ul class="trio">
+          <li><strong>Read on your device</strong><span>Text recognition runs on your iPhone. Receipts are never uploaded to our servers.</span></li>
+          <li><strong>Synced privately</strong><span>Sync goes through your own private iCloud database. We have no access to it.</span></li>
+          <li><strong>Camera only when you scan</strong><span>Turn camera access off anytime in Settings.</span></li>
         </ul>
       </div>
     </section>
@@ -178,23 +179,21 @@
       <div class="wrap split">
         <div class="section-head">
           <p class="eyebrow">For retailers and deal sites</p>
-          <h2>A mistake caught at the counter is a customer kept</h2>
-          <p>Pricing errors cost stores more than the refund. A shopper who finds a double charge at home trusts the store less, and many don't come back. Dupe Detective moves the catch to the counter, where it takes a minute to fix.</p>
-          <p><a href="/for-business">How Dupe Detective helps retailers and deal sites</a></p>
+          <h2>A mistake caught at the counter is a customer kept.</h2>
+          <p>Pricing errors cost more than the refund. Shoppers who find them at home trust the store less, and many don't come back.</p>
+          <p><a href="/for-business">Dupe Detective for business</a></p>
         </div>
-        <ul class="facts">
-          <li><span class="k">71%</span><span>of shoppers would switch retailers over repeated pricing errors</span></li>
-          <li><span class="k">43%</span><span>would shop at that store less often</span></li>
-          <li><span class="k">1 in 4</span><span>say they're overcharged at checkout at least monthly</span></li>
-          <li><span class="k">Source</span><span><a href="https://management.buffalo.edu/content/dam/mgt/Centers/Documents/center-for-marketing-analysis/pricing-accuracy-fall2025.pdf">University at Buffalo survey of 2,011 U.S. shoppers, fall 2025</a></span></li>
+        <ul class="biz-stats">
+          <li><b>71%</b><span>of shoppers would switch retailers over repeated pricing errors</span></li>
+          <li><b>43%</b><span>would shop at that store less often</span></li>
+          <li><b>26%</b><span>would spend less there</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt">
       <div class="wrap split">
         <div class="section-head">
-          <p class="eyebrow">Guides</p>
           <h2>Seeing the same charge twice?</h2>
           <p>Plain answers to the questions people search for when a receipt or statement looks wrong.</p>
           <p><a href="/blog/">All guides</a></p>
@@ -211,16 +210,15 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap cta">
-        <div class="section-head" style="margin-bottom:0">
-          <h2>Have a question first?</h2>
-          <p>Read the FAQ, or see our guides on spotting and disputing duplicate charges.</p>
-        </div>
-        <div class="actions">
-          <a class="btn btn-primary" href="/faq">Read the FAQ</a>
-          <a class="btn btn-ghost" href="/blog/">Visit the blog</a>
-        </div>
+    <section class="closing">
+      <div class="wrap">
+        <img class="app-icon" src="/images/icon-256.png" width="84" height="84" alt="Dupe Detective app icon" loading="lazy">
+        <h2>Don't get duped.</h2>
+        <p>3 free scans and a 7-day free trial, then $4.99 a year.</p>
+        <a class="btn btn-primary btn-store" href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">
+              <svg width="22" height="26" viewBox="0 0 16 19" aria-hidden="true"><path fill="currentColor" d="M13.2 10.1c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8C3.6 4.9 2.1 5.8 1.3 7.3c-1.7 2.9-.4 7.2 1.2 9.5.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.4-.9-2.4-3.9ZM10.9 3.3c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3Z"/></svg>
+              <span><small>Download on the</small><strong>App Store</strong></span>
+            </a>
       </div>
     </section>
   </main>
