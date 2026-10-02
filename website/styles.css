@@ -369,3 +369,10 @@ time, .byline { font-family: var(--font-mono); font-size: var(--step--1); color:
 .related a, .guide-list a { display: block; padding-block: 14px; text-decoration: none; font-weight: 600; }
 .related a:hover, .guide-list a:hover { text-decoration: underline; }
 .guide-list a::after { content: " →"; color: var(--muted); }
+
+.tip {
+  font-size: var(--step--1);
+  color: var(--muted);
+  margin: -16px 0 32px;
+}
+.tip strong { color: var(--ink); }
