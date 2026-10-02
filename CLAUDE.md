@@ -36,7 +36,7 @@ Pushing to `main` deploys the site automatically via Cloudflare.
 
 ## Open items
 
-1. ~~Apply the SEO spec from https://x.com/borjafat/status/2104896885173436464~~ Done: About page, statistics page, footer with priority links. Still needed from the owner for `website/about.html` (see the TODO comment there): a sentence or two on their background and why they built the app, plus a LinkedIn or other profile link. Original research for the statistics page would also help (for example an opt-in in-app survey); the app is on-device, so there's no receipt data to draw on.
+1. ~~Apply the SEO spec from https://x.com/borjafat/status/2104896885173436464~~ Done: About page, statistics page, footer with priority links. Still needed from the owner for `website/about.html` (see the TODO comment there): a LinkedIn or other profile link. Original research for the statistics page would also help (for example an opt-in in-app survey); the app is on-device, so there's no receipt data to draw on.
 2. ~~Add App Store screenshots to "How it works"~~ Done.
 3. Add `www.dupedetective.tech` as a Cloudflare custom domain and redirect it to the apex domain (Cloudflare dashboard → Rules → Redirect Rules).
 4. Set up Google Search Console for dupedetective.tech and submit `https://dupedetective.tech/sitemap.xml`.
