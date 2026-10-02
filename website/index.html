@@ -7,38 +7,62 @@
   <meta name="description" content="Dupe Detective scans your receipts on your iPhone and flags items you were charged for twice. Receipts are processed on your device and sync through your private iCloud.">
   <meta name="apple-itunes-app" content="app-id=6773174333">
   <link rel="canonical" href="https://dupedetective.tech/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dupe Detective: catch duplicate charges on your receipts">
   <meta property="og:description" content="Scan a receipt and see anything you were charged for twice. Processed on your device.">
   <meta property="og:url" content="https://dupedetective.tech/">
+  <meta property="og:site_name" content="Dupe Detective">
+  <meta property="og:image" content="https://dupedetective.tech/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@400;600&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Dupe Detective",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "iOS, macOS",
-    "description": "Scan receipts and find items you were charged for more than once. Receipts are processed on your device.",
-    "url": "https://dupedetective.tech/",
-    "downloadUrl": "https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dupedetective.tech/#org",
+        "name": "Dupe Detective",
+        "url": "https://dupedetective.tech/",
+        "logo": "https://dupedetective.tech/apple-touch-icon.png",
+        "email": "support@dupedetective.tech",
+        "sameAs": ["https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333"]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Dupe Detective",
+        "url": "https://dupedetective.tech/",
+        "publisher": {"@id": "https://dupedetective.tech/#org"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Dupe Detective: Receipt Scanner",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "iOS, macOS",
+        "description": "Scan receipts and find items you were charged for more than once. Receipts are processed on your device and sync through your private iCloud.",
+        "url": "https://dupedetective.tech/",
+        "downloadUrl": "https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333",
+        "publisher": {"@id": "https://dupedetective.tech/#org"}
+      }
+    ]
   }
   </script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html">
+      <a class="brand" href="/">
         <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="2" width="14" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 7h7M6.5 11h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="16" r="4.5" fill="var(--mark)" stroke="currentColor" stroke-width="2"/><path d="M20.3 19.3 24 23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
         Dupe Detective
       </a>
       <nav class="nav" aria-label="Main">
-        <a href="faq.html">FAQ</a>
-        <a href="blog/index.html">Blog</a>
+        <a href="/faq">FAQ</a>
+        <a href="/blog/">Blog</a>
         <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy</a>
       </nav>
     </div>
@@ -123,14 +147,34 @@
     </section>
 
     <section class="section">
+      <div class="wrap split">
+        <div class="section-head">
+          <p class="eyebrow">Guides</p>
+          <h2>Seeing the same charge twice?</h2>
+          <p>Plain answers to the questions people search for when a receipt or statement looks wrong.</p>
+          <p><a href="/blog/">All guides</a></p>
+        </div>
+        <ul class="guide-list">
+<!-- guides:start -->
+          <li><a href="/blog/why-was-i-charged-twice">Why was I charged twice? 5 common reasons</a></li>
+          <li><a href="/blog/double-charged-what-to-do">Double charged? What to do next</a></li>
+          <li><a href="/blog/pending-charge-showing-twice">Pending charge showing twice? How to tell if it&#x27;s a real duplicate</a></li>
+          <li><a href="/blog/charged-twice-grocery-store">Charged twice for an item at the grocery store? How to get a refund</a></li>
+          <li><a href="/blog/how-to-dispute-a-double-charge">How to dispute a double charge with your bank or card issuer</a></li>
+<!-- guides:end -->
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="wrap cta">
         <div class="section-head" style="margin-bottom:0">
           <h2>Have a question first?</h2>
           <p>Read the FAQ, or see our guides on spotting and disputing duplicate charges.</p>
         </div>
         <div class="actions">
-          <a class="btn btn-primary" href="faq.html">Read the FAQ</a>
-          <a class="btn btn-ghost" href="blog/index.html">Visit the blog</a>
+          <a class="btn btn-primary" href="/faq">Read the FAQ</a>
+          <a class="btn btn-ghost" href="/blog/">Visit the blog</a>
         </div>
       </div>
     </section>
@@ -140,8 +184,8 @@
     <div class="wrap">
       <span>© 2026 Dupe Detective · support@dupedetective.tech</span>
       <nav aria-label="Footer">
-        <a href="faq.html">FAQ</a>
-        <a href="blog/index.html">Blog</a>
+        <a href="/faq">FAQ</a>
+        <a href="/blog/">Blog</a>
         <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy Policy</a>
         <a href="mailto:support@dupedetective.tech">Contact</a>
       </nav>
