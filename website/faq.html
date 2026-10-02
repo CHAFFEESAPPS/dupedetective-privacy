@@ -7,11 +7,12 @@
   <meta name="description" content="Answers about Dupe Detective: how receipt scanning works, where your data is stored, iCloud sync, deleting data, and getting support.">
   <meta name="apple-itunes-app" content="app-id=6773174333">
   <link rel="canonical" href="https://dupedetective.tech/faq">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@400;600&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,6 +25,7 @@
       {"@type": "Question", "name": "Why does the app need camera access?", "acceptedAnswer": {"@type": "Answer", "text": "The camera is used only when you choose to scan a receipt. You can turn camera access off at any time in Settings, then Dupe Detective."}},
       {"@type": "Question", "name": "How do I delete my data?", "acceptedAnswer": {"@type": "Answer", "text": "Deleting the app removes the data stored on that device. To remove the copy synced to iCloud, open Settings, tap your name, then iCloud, then manage your storage and delete the Dupe Detective data."}},
       {"@type": "Question", "name": "Is a duplicate item always a mistake?", "acceptedAnswer": {"@type": "Answer", "text": "No. If you bought two of the same thing, both lines are correct. The app points out repeats so you can check them; you decide whether one is an error."}},
+      {"@type": "Question", "name": "Why do I see the same charge twice on my card?", "acceptedAnswer": {"@type": "Answer", "text": "Usually one of them is a pending hold that drops off within a few days. Restaurants, gas stations and hotels do this. If both charges have posted, the payment probably went through twice."}},
       {"@type": "Question", "name": "How do I get a refund for a duplicate charge?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the store, and bring the receipt. If the store won't fix it, contact your card issuer to dispute the charge. Our blog has a step-by-step guide."}},
       {"@type": "Question", "name": "How do I contact support?", "acceptedAnswer": {"@type": "Answer", "text": "Email support@dupedetective.tech."}}
     ]
@@ -33,13 +35,13 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html">
+      <a class="brand" href="/">
         <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="2" width="14" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 7h7M6.5 11h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="16" r="4.5" fill="var(--mark)" stroke="currentColor" stroke-width="2"/><path d="M20.3 19.3 24 23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
         Dupe Detective
       </a>
       <nav class="nav" aria-label="Main">
-        <a href="faq.html" aria-current="page">FAQ</a>
-        <a href="blog/index.html">Blog</a>
+        <a href="/faq" aria-current="page">FAQ</a>
+        <a href="/blog/">Blog</a>
         <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy</a>
       </nav>
     </div>
@@ -67,8 +69,12 @@
         <div><p>Yes. Saved receipts and flagged duplicates sync between your iPhone and Mac through iCloud when you're signed in to the same Apple Account.</p></div>
       </details>
       <details>
+        <summary>Why do I see the same charge twice on my card?</summary>
+        <div><p>Usually one of them is a pending hold that drops off within a few days. Restaurants, gas stations and hotels do this. If both charges have posted, the payment probably went through twice. Read <a href="/blog/why-was-i-charged-twice">Why was I charged twice?</a></p></div>
+      </details>
+      <details>
         <summary>How do I get a refund for a duplicate charge?</summary>
-        <div><p>Start with the store, and bring the receipt. If the store won't fix it, contact your card issuer to dispute the charge. Our guide <a href="blog/double-charged-what-to-do.html">Double charged? What to do next</a> walks through each step.</p></div>
+        <div><p>Start with the store, and bring the receipt. If the store won't fix it, contact your card issuer to dispute the charge. Our guide <a href="/blog/double-charged-what-to-do">Double charged? What to do next</a> walks through each step.</p></div>
       </details>
 
       <h2>Privacy and data</h2>
@@ -104,8 +110,8 @@
     <div class="wrap">
       <span>© 2026 Dupe Detective · support@dupedetective.tech</span>
       <nav aria-label="Footer">
-        <a href="faq.html">FAQ</a>
-        <a href="blog/index.html">Blog</a>
+        <a href="/faq">FAQ</a>
+        <a href="/blog/">Blog</a>
         <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy Policy</a>
         <a href="mailto:support@dupedetective.tech">Contact</a>
       </nav>
