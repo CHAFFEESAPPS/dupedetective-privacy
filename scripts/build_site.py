@@ -34,6 +34,11 @@ POSTS = [
     "double-charged-debit-card",
     "how-to-check-receipt-for-errors",
     "spot-duplicate-charges-on-receipts",
+    # For retailers and deal sites (audience: business)
+    "pricing-errors-customer-retention",
+    "how-to-reduce-checkout-pricing-errors",
+    "failed-price-verification-inspection",
+    "handle-overcharged-customer",
 ]
 
 RELATED = {
@@ -45,6 +50,10 @@ RELATED = {
     "double-charged-debit-card": ["how-to-dispute-a-double-charge", "pending-charge-showing-twice", "why-was-i-charged-twice"],
     "how-to-check-receipt-for-errors": ["charged-twice-grocery-store", "spot-duplicate-charges-on-receipts", "why-was-i-charged-twice"],
     "spot-duplicate-charges-on-receipts": ["how-to-check-receipt-for-errors", "charged-twice-grocery-store", "double-charged-what-to-do"],
+    "pricing-errors-customer-retention": ["handle-overcharged-customer", "how-to-reduce-checkout-pricing-errors", "failed-price-verification-inspection"],
+    "how-to-reduce-checkout-pricing-errors": ["failed-price-verification-inspection", "handle-overcharged-customer", "pricing-errors-customer-retention"],
+    "failed-price-verification-inspection": ["how-to-reduce-checkout-pricing-errors", "pricing-errors-customer-retention", "handle-overcharged-customer"],
+    "handle-overcharged-customer": ["pricing-errors-customer-retention", "how-to-reduce-checkout-pricing-errors", "failed-price-verification-inspection"],
 }
 
 FONTS = "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@400;600&display=swap"
@@ -141,6 +150,7 @@ FOOTER = f"""  <footer class="site-footer">
         <nav aria-label="Company">
           <h2>Company</h2>
           <a href="/about">About Dupe Detective</a>
+          <a href="/for-business">For retailers and deal sites</a>
           <a href="{POLICY_URL}">Privacy policy</a>
           <a href="mailto:{EMAIL}">Contact support</a>
         </nav>
@@ -156,6 +166,7 @@ STATIC_PAGES = [
     ("faq.html", "faq"),
     ("about.html", "about"),
     ("checkout-overcharge-statistics.html", "stats"),
+    ("for-business.html", "business"),
 ]
 
 
@@ -192,6 +203,24 @@ def post_page(p, posts):
     related = "\n".join(
         f'          <li><a href="/blog/{s}">{html.escape(posts[s]["title"])}</a></li>' for s in RELATED[p["slug"]]
     )
+    if is_business(p):
+        tip = ""
+        cta = f"""      <aside class="app-cta">
+        <div>
+          <h2>Help shoppers catch mistakes at the counter</h2>
+          <p>Dupe Detective scans a receipt in a few seconds and flags items rung up twice, so a mistake gets fixed before the customer leaves, not after they've lost trust.</p>
+        </div>
+        <a class="btn btn-primary" href="/for-business">Dupe Detective for business</a>
+      </aside>"""
+    else:
+        tip = """      <p class="tip"><strong>Skip the hassle next time.</strong> Scan your receipt with <a href="/">Dupe Detective</a> before you leave the store. It takes a few seconds, and a double charge caught at the register is fixed on the spot.</p>"""
+        cta = f"""      <aside class="app-cta">
+        <div>
+          <h2>Scan it before you leave the store</h2>
+          <p>Dupe Detective checks your receipt in a few seconds and highlights anything you were charged for twice, so you can get it fixed at the register instead of disputing it later.</p>
+        </div>
+        <a class="btn btn-primary" href="{APP_URL}">Download on the App Store</a>
+      </aside>"""
     main = f"""  <main class="wrap">
     <article class="article prose">
       <header>
@@ -203,17 +232,11 @@ def post_page(p, posts):
         <p class="eyebrow">Short answer</p>
         <p>{html.escape(p["answer"])}</p>
       </div>
-      <p class="tip"><strong>Skip the hassle next time.</strong> Scan your receipt with <a href="/">Dupe Detective</a> before you leave the store. It takes a few seconds, and a double charge caught at the register is fixed on the spot.</p>
+{tip}
       <div class="body">
 {p["body"]}
       </div>
-      <aside class="app-cta">
-        <div>
-          <h2>Scan it before you leave the store</h2>
-          <p>Dupe Detective checks your receipt in a few seconds and highlights anything you were charged for twice, so you can get it fixed at the register instead of disputing it later.</p>
-        </div>
-        <a class="btn btn-primary" href="{APP_URL}">Download on the App Store</a>
-      </aside>
+{cta}
       <nav class="related" aria-label="Related guides">
         <h2>Related guides</h2>
         <ul>
@@ -234,12 +257,21 @@ def post_page(p, posts):
 """
 
 
-def blog_index(posts):
-    items = "\n".join(f"""      <li>
+def is_business(p):
+    return p.get("audience") == "business"
+
+
+def post_items(posts):
+    return "\n".join(f"""      <li>
         <time datetime="{p["date"]}">{human_date(p["date"])}</time>
         <a href="/blog/{p["slug"]}"><h2>{html.escape(p["title"])}</h2></a>
         <p>{html.escape(p["description"])}</p>
       </li>""" for p in posts)
+
+
+def blog_index(posts):
+    shoppers = post_items([p for p in posts if not is_business(p)])
+    business = post_items([p for p in posts if is_business(p)])
     schema = ld({
         "@context": "https://schema.org",
         "@type": "Blog",
@@ -257,8 +289,13 @@ def blog_index(posts):
       <h1>Guides to catching double charges</h1>
       <p>Practical answers to the questions people ask when they see the same charge twice: why it happened, how to tell a hold from a duplicate, and how to get the money back. The easiest fix is to catch it before you leave the store.</p>
     </div>
+    <h2 class="list-head" id="shoppers">For shoppers</h2>
     <ul class="post-list">
-{items}
+{shoppers}
+    </ul>
+    <h2 class="list-head" id="business">For retailers and deal sites</h2>
+    <ul class="post-list">
+{business}
     </ul>
   </main>
 
@@ -270,7 +307,8 @@ def blog_index(posts):
 
 def home_guides(posts):
     return "\n".join(
-        f'          <li><a href="/blog/{p["slug"]}">{html.escape(p["title"])}</a></li>' for p in posts[:5]
+        f'          <li><a href="/blog/{p["slug"]}">{html.escape(p["title"])}</a></li>'
+        for p in [p for p in posts if not is_business(p)][:5]
     )
 
 
@@ -295,7 +333,7 @@ def main():
 
     latest = max(p.get("updated", p["date"]) for p in ordered)
     urls = [("/", latest), ("/faq", latest), ("/about", latest),
-            ("/checkout-overcharge-statistics", latest), ("/blog/", latest)] + [
+            ("/checkout-overcharge-statistics", latest), ("/for-business", latest), ("/blog/", latest)] + [
         (f"/blog/{p['slug']}", p.get("updated", p["date"])) for p in ordered
     ]
     (SITE / "sitemap.xml").write_text(
@@ -347,7 +385,9 @@ def main():
         f"- [FAQ]({BASE}/faq): privacy, iCloud sync, deleting data, refunds\n"
         f"- [About]({BASE}/about): what Dupe Detective does, who it's for and who makes it\n"
         f"- [Checkout overcharge statistics 2026]({BASE}/checkout-overcharge-statistics): "
-        "sourced figures on how often stores overcharge at the register\n\n"
+        "sourced figures on how often stores overcharge at the register\n"
+        f"- [For retailers and deal sites]({BASE}/for-business): how checkout pricing errors affect "
+        "customer retention, and how Dupe Detective helps shoppers catch them at the counter\n\n"
         "## Guides\n\n"
         + "".join(f"- [{p['title']}]({p['url']}): {p['answer']}\n" for p in ordered)
     )

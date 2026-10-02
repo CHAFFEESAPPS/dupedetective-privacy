@@ -20,8 +20,8 @@ Pushing to `main` deploys the site automatically via Cloudflare.
 
 ## Working on the site
 
-- **Add a blog post:** create `content/blog/<slug>.html` with `title`, `description`, `date`, `answer` in the top comment. Add the slug to `POSTS` and `RELATED` in `scripts/build_site.py`. Run `python3 scripts/build_site.py`. Commit both `content/` and `website/`.
-- **Never hand-edit** `website/blog/*`, `sitemap.xml`, `robots.txt` or `llms.txt`. They're generated. `website/index.html`, `website/faq.html`, `website/about.html`, `website/checkout-overcharge-statistics.html`, `website/styles.css` and `website/404.html` are hand-edited, except for the blocks between `<!-- header:start/end -->`, `<!-- footer:start/end -->` and `<!-- guides:start/end -->` markers, which the build script fills in.
+- **Add a blog post:** create `content/blog/<slug>.html` with `title`, `description`, `date`, `answer` in the top comment. Add `audience: business` for posts aimed at retailers and deal sites: they get a business call to action (linking `/for-business`), no shopper tip, and their own section on the blog index. Add the slug to `POSTS` and `RELATED` in `scripts/build_site.py`. Run `python3 scripts/build_site.py`. Commit both `content/` and `website/`.
+- **Never hand-edit** `website/blog/*`, `sitemap.xml`, `robots.txt` or `llms.txt`. They're generated. `website/index.html`, `website/faq.html`, `website/about.html`, `website/checkout-overcharge-statistics.html`, `website/for-business.html`, `website/styles.css` and `website/404.html` are hand-edited, except for the blocks between `<!-- header:start/end -->`, `<!-- footer:start/end -->` and `<!-- guides:start/end -->` markers, which the build script fills in.
 - **Header and footer** are defined once in `scripts/build_site.py` (`header()` and `FOOTER`). The footer carries the priority pages (download links, How it works, FAQ, statistics, About). A new hand-edited page needs the markers and an entry in `STATIC_PAGES`.
 - **Statistics page** (`/checkout-overcharge-statistics`): only cite government, university or established consumer-publication sources, link the original, and give sample and dates beside each figure. Review quarterly and update the "Last reviewed" date and `dateModified`.
 - Internal links use clean root-relative URLs (`/faq`, `/blog/<slug>`), matching the canonical tags.
@@ -34,6 +34,7 @@ Pushing to `main` deploys the site automatically via Cloudflare.
 - Only claim what the app actually does: on-device scanning, iCloud sync via the user's private database (developers have no access), camera used only when scanning.
 - Other confirmed features: grocery list that syncs between Mac and iPhone on the same Apple ID; the list scrolls across the top of the app like a stock ticker while shopping; receipt history; import digital receipts; works with Costco, Kroger, Fry's, Sam's Club, Walmart and most grocery stores; pricing: free download, 3 free scans, then a 7-day free trial, then Dupe Detective Pro at $4.99/year (subscription). Don't call the app "free" without the trial context. (The App Store description still says "No subscription required"; the owner should fix it in App Store Connect.)
 - Each blog post targets a real search question and opens with a short, direct answer.
+- Business angle (`/for-business`, business posts): customer retention. Pricing errors cost more than the refund; a mistake caught at the counter is a customer kept. Main stats: University at Buffalo fall 2025 survey (71% would switch, 43% shop less often, 26% spend less, one in four overcharged monthly).
 
 ## Open items
 
