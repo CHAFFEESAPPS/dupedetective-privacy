@@ -32,6 +32,7 @@ Pushing to `main` deploys the site automatically via Cloudflare.
 - **Main pitch: scan your receipt before you leave the store.** It takes a few seconds, and a double charge caught at the register gets fixed on the spot instead of a bank dispute later.
 - Disputes happen in the banking app ("Dispute" / "Report a problem") or by calling the number on the back of the card. Don't tell people to write letters.
 - Only claim what the app actually does: on-device scanning, iCloud sync via the user's private database (developers have no access), camera used only when scanning.
+- Other confirmed features: grocery list that syncs between Mac and iPhone on the same Apple ID; the list scrolls across the top of the app like a stock ticker while shopping; receipt history; import digital receipts; works with Costco, Kroger, Fry's, Sam's Club, Walmart and most grocery stores; free with an optional Pro tier for unlimited scanning.
 - Each blog post targets a real search question and opens with a short, direct answer.
 
 ## Open items
