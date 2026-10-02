@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dupe Detective</title>
+  <meta name="description" content="Dupe Detective scans your receipts on your iPhone and flags items you were charged for twice. Receipts are processed on your device and sync through your private iCloud.">
+  <link rel="canonical" href="https://dupedetective.tech/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dupe Detective: catch duplicate charges on your receipts">
+  <meta property="og:description" content="Scan a receipt and see anything you were charged for twice. Processed on your device.">
+  <meta property="og:url" content="https://dupedetective.tech/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@400;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dupe Detective",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS, macOS",
+    "description": "Scan receipts and find items you were charged for more than once. Receipts are processed on your device.",
+    "url": "https://dupedetective.tech/"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="2" width="14" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 7h7M6.5 11h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="16" r="4.5" fill="var(--mark)" stroke="currentColor" stroke-width="2"/><path d="M20.3 19.3 24 23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        Dupe Detective
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="faq.html">FAQ</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">Receipt scanner for iPhone &amp; Mac</p>
+          <h1>Catch the item you paid for <span class="mark">twice</span>.</h1>
+          <p class="lede">Scan a receipt and Dupe Detective points out anything that was rung up more than once. The scanning happens on your phone, so your receipts stay with you.</p>
+          <div class="actions">
+            <!-- TODO: replace href with your App Store link -->
+            <a class="btn btn-primary" href="https://apps.apple.com/">
+              <svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path fill="currentColor" d="M13.2 9.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8C3.6 4.4 2.1 5.3 1.3 6.8c-1.7 2.9-.4 7.2 1.2 9.5.8 1.1 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.4-.9-2.4-3.9ZM10.9 2.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3Z"/></svg>
+              Download on the App Store
+            </a>
+            <a class="btn btn-ghost" href="#how">See how it works</a>
+          </div>
+          <p class="hero-note">For iPhone, with sync to your Mac through iCloud.</p>
+        </div>
+
+        <figure class="receipt" aria-label="Example receipt with a duplicate item highlighted">
+          <header>
+            <strong>CORNER GROCERY</strong>
+            <span class="meta">STORE 0412 · 10/02/26 · 5:47 PM</span>
+          </header>
+          <ol>
+            <li><span>OAT MILK 64OZ</span><span>4.79</span></li>
+            <li><span>BANANAS</span><span>0.78</span></li>
+            <li class="sub"><span>1.32 LB @ 0.59/LB</span></li>
+            <li class="dupe"><span>OAT MILK 64OZ</span><span>4.79</span></li>
+            <li class="flag-row"><span class="flag">↑ Rung up twice</span></li>
+            <li><span>SOURDOUGH LOAF</span><span>5.49</span></li>
+            <li><span>EGGS LARGE DOZ</span><span>3.99</span></li>
+          </ol>
+          <hr>
+          <div class="row"><span>ITEMS</span><span>5</span></div>
+          <div class="row total"><span>TOTAL</span><span>$19.84</span></div>
+          <div class="row meta"><span>VISA ****4021</span><span>APPROVED</span></div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>Three steps at the checkout line or the kitchen table</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Scan the receipt</h3>
+            <p>Point your iPhone camera at a paper receipt. The app reads each line item and price.</p>
+          </li>
+          <li>
+            <h3>Get the duplicates flagged</h3>
+            <p>Items that appear more than once are highlighted, so a double scan at the register is easy to spot.</p>
+          </li>
+          <li>
+            <h3>Decide what to do</h3>
+            <p>If you only bought one, you have the receipt in hand to ask the store for a refund.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div class="section-head">
+          <p class="eyebrow">Privacy</p>
+          <h2>Your receipts stay yours</h2>
+          <p>Receipts are read on your device. When you sync between your iPhone and Mac, the data goes to your own private iCloud database. We can't open it, and we don't keep a copy on our servers.</p>
+        </div>
+        <ul class="facts">
+          <li><span class="k">Scanning</span><span>On your device</span></li>
+          <li><span class="k">Sync</span><span>Your private iCloud database</span></li>
+          <li><span class="k">Who can read it</span><span>Only you. The developers have no access.</span></li>
+          <li><span class="k">Camera</span><span>Used only when you choose to scan</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap cta">
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Have a question first?</h2>
+          <p>Read the FAQ, or see our guides on spotting and disputing duplicate charges.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="faq.html">Read the FAQ</a>
+          <a class="btn btn-ghost" href="blog/index.html">Visit the blog</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Dupe Detective · support@dupedetective.tech</span>
+      <nav aria-label="Footer">
+        <a href="faq.html">FAQ</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy Policy</a>
+        <a href="mailto:support@dupedetective.tech">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
