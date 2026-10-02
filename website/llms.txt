@@ -1,6 +1,6 @@
 # Dupe Detective
 
-> Dupe Detective is a receipt scanner for iPhone and Mac. You scan a paper receipt and the app highlights any item that appears more than once, such as an item scanned twice at the register. Receipts are processed on the device and sync through the user's private iCloud database; the developers cannot access them.
+> Dupe Detective is a receipt scanner for iPhone and Mac. You scan a paper receipt and the app highlights any item that appears more than once, such as an item scanned twice at the register. Scanning takes a few seconds, so shoppers can catch a double charge before leaving the store and have it fixed at the register instead of disputing it with their bank later. Receipts are processed on the device and sync through the user's private iCloud database; the developers cannot access them.
 
 - App Store: https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333
 - Support: support@dupedetective.tech

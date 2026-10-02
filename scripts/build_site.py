@@ -172,13 +172,14 @@ def post_page(p, posts):
         <p class="eyebrow">Short answer</p>
         <p>{html.escape(p["answer"])}</p>
       </div>
+      <p class="tip"><strong>Skip the hassle next time.</strong> Scan your receipt with <a href="/">Dupe Detective</a> before you leave the store. It takes a few seconds, and a double charge caught at the register is fixed on the spot.</p>
       <div class="body">
 {p["body"]}
       </div>
       <aside class="app-cta">
         <div>
-          <h2>Catch double charges before you leave the store</h2>
-          <p>Dupe Detective scans your receipt on your iPhone and highlights anything you were charged for twice.</p>
+          <h2>Scan it before you leave the store</h2>
+          <p>Dupe Detective checks your receipt in a few seconds and highlights anything you were charged for twice, so you can get it fixed at the register instead of disputing it later.</p>
         </div>
         <a class="btn btn-primary" href="{APP_URL}">Download on the App Store</a>
       </aside>
@@ -223,7 +224,7 @@ def blog_index(posts):
     <div class="page-head">
       <p class="eyebrow">Blog</p>
       <h1>Guides to catching double charges</h1>
-      <p>Practical answers to the questions people ask when they see the same charge twice: why it happened, how to tell a hold from a duplicate, and how to get the money back.</p>
+      <p>Practical answers to the questions people ask when they see the same charge twice: why it happened, how to tell a hold from a duplicate, and how to get the money back. The easiest fix is to catch it before you leave the store.</p>
     </div>
     <ul class="post-list">
 {items}
@@ -285,6 +286,8 @@ def main():
         "# Dupe Detective\n\n"
         "> Dupe Detective is a receipt scanner for iPhone and Mac. You scan a paper receipt and the app "
         "highlights any item that appears more than once, such as an item scanned twice at the register. "
+        "Scanning takes a few seconds, so shoppers can catch a double charge before leaving the store "
+        "and have it fixed at the register instead of disputing it with their bank later. "
         "Receipts are processed on the device and sync through the user's private iCloud database; the "
         "developers cannot access them.\n\n"
         f"- App Store: {APP_URL}\n"
