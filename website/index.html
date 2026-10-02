@@ -47,6 +47,9 @@
         "description": "Scan receipts and find items you were charged for more than once. Receipts are processed on your device and sync through your private iCloud.",
         "url": "https://dupedetective.tech/",
         "downloadUrl": "https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333",
+        "screenshot": ["https://dupedetective.tech/images/01-receipt.webp", "https://dupedetective.tech/images/02-home.webp", "https://dupedetective.tech/images/03-alerts.webp", "https://dupedetective.tech/images/04-grocery.webp"],
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "author": {"@type": "Person", "name": "Marcus Chaffee"},
         "publisher": {"@id": "https://dupedetective.tech/#org"}
       }
     ]
@@ -54,6 +57,7 @@
   </script>
 </head>
 <body>
+<!-- header:start -->
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/">
@@ -61,12 +65,14 @@
         Dupe Detective
       </a>
       <nav class="nav" aria-label="Main">
+        <a href="/#how">How it works</a>
         <a href="/faq">FAQ</a>
         <a href="/blog/">Blog</a>
-        <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy</a>
+        <a href="/about">About</a>
       </nav>
     </div>
   </header>
+<!-- header:end -->
 
   <main>
     <section class="hero">
@@ -82,7 +88,7 @@
             </a>
             <a class="btn btn-ghost" href="#how">See how it works</a>
           </div>
-          <p class="hero-note">Available for iPhone and Mac. Your receipts sync between them through iCloud.</p>
+          <p class="hero-note">Free on iPhone and Mac. Works with Costco, Kroger, Walmart, Sam's Club and most grocery stores.</p>
         </div>
 
         <figure class="receipt" aria-label="Example receipt with a duplicate item highlighted">
@@ -116,18 +122,38 @@
         </div>
         <ol class="steps">
           <li>
+            <img class="shot" src="/images/02-home.webp" width="600" height="1304" alt="Dupe Detective home screen with Scan Receipt and Import Receipt buttons" loading="lazy" decoding="async">
             <h3>Scan before you leave</h3>
-            <p>Point your iPhone at the receipt at the counter or on the way to the door. It takes a few seconds.</p>
+            <p>Tap Scan Receipt and point your iPhone at the receipt at the counter or on the way to the door. You can also import a digital receipt. It takes a few seconds.</p>
           </li>
           <li>
+            <img class="shot" src="/images/01-receipt.webp" width="600" height="1304" alt="A scanned grocery receipt with the same item, Kettle Avo, highlighted in red on two lines" loading="lazy" decoding="async">
             <h3>See what was charged twice</h3>
-            <p>Any item that appears more than once is highlighted, so a double scan is easy to spot.</p>
+            <p>Any item that appears more than once is highlighted in red, so a double scan is easy to spot on even a long receipt.</p>
           </li>
           <li>
+            <img class="shot" src="/images/03-alerts.webp" width="600" height="1304" alt="Alerts screen listing saved receipts with the number of potential duplicates on each" loading="lazy" decoding="async">
             <h3>Get it fixed on the spot</h3>
-            <p>Show the highlighted line to the cashier or customer service. No waiting on holds, no bank disputes.</p>
+            <p>Show the highlighted line to the cashier or customer service. Every flagged receipt is also saved in Alerts, so nothing slips through.</p>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split features">
+        <div class="section-head">
+          <p class="eyebrow">More than a scanner</p>
+          <h2>Your grocery list and receipt history in one place</h2>
+          <p>Plan the trip, check the receipt, and keep a record for returns and warranties.</p>
+          <ul class="facts">
+            <li><span class="k">Grocery list</span><span>Plan your shopping and keep it synced across your devices</span></li>
+            <li><span class="k">Receipt history</span><span>Review past trips, track spending and spot price changes</span></li>
+            <li><span class="k">Stores</span><span>Costco, Kroger, Fry's, Sam's Club, Walmart and most major grocery stores</span></li>
+            <li><span class="k">Price</span><span>Free to download, no subscription required. Pro unlocks unlimited scanning.</span></li>
+          </ul>
+        </div>
+        <img class="shot" src="/images/04-grocery.webp" width="600" height="1304" alt="Dupe Detective shopping list with bread, milk, pasta, cereal and coffee" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -136,7 +162,7 @@
         <div class="section-head">
           <p class="eyebrow">Privacy</p>
           <h2>Your receipts stay yours</h2>
-          <p>Receipts are read on your device. When you sync between your iPhone and Mac, the data goes to your own private iCloud database. We can't open it, and we don't keep a copy on our servers.</p>
+          <p>Receipts are read on your device, and scanning works without an internet connection. When you sync between your iPhone and Mac, the data goes to your own private iCloud database. We can't open it, and we don't keep a copy on our servers.</p>
         </div>
         <ul class="facts">
           <li><span class="k">Scanning</span><span>On your device</span></li>
@@ -181,16 +207,34 @@
     </section>
   </main>
 
+<!-- footer:start -->
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 Dupe Detective · support@dupedetective.tech</span>
-      <nav aria-label="Footer">
-        <a href="/faq">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy Policy</a>
-        <a href="mailto:support@dupedetective.tech">Contact</a>
-      </nav>
+      <div class="footer-cols">
+        <nav aria-label="Get the app">
+          <h2>Get the app</h2>
+          <a href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">Download for iPhone</a>
+          <a href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">Download for Mac</a>
+          <a href="/#how">How Dupe Detective works</a>
+          <a href="/faq">Receipt scanner FAQ</a>
+        </nav>
+        <nav aria-label="Learn">
+          <h2>Learn</h2>
+          <a href="/checkout-overcharge-statistics">Checkout overcharge statistics 2026</a>
+          <a href="/blog/why-was-i-charged-twice">Why was I charged twice?</a>
+          <a href="/blog/charged-twice-grocery-store">Charged twice at the grocery store</a>
+          <a href="/blog/">All guides</a>
+        </nav>
+        <nav aria-label="Company">
+          <h2>Company</h2>
+          <a href="/about">About Dupe Detective</a>
+          <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy policy</a>
+          <a href="mailto:support@dupedetective.tech">Contact support</a>
+        </nav>
+      </div>
+      <p class="footer-legal">© 2026 Dupe Detective · support@dupedetective.tech</p>
     </div>
   </footer>
+<!-- footer:end -->
 </body>
 </html>

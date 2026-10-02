@@ -19,6 +19,8 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type": "Question", "name": "What does Dupe Detective do?", "acceptedAnswer": {"@type": "Answer", "text": "You scan a paper receipt with your iPhone camera, and the app reads the line items and highlights anything that appears more than once, such as an item scanned twice at the register."}},
+      {"@type": "Question", "name": "Which stores does Dupe Detective work with?", "acceptedAnswer": {"@type": "Answer", "text": "It works with receipts from Costco, Kroger, Fry's, Sam's Club, Walmart and most major grocery stores. You can scan a paper receipt or import a digital one."}},
+      {"@type": "Question", "name": "Is Dupe Detective free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's free to download with no subscription required. An optional Pro upgrade unlocks unlimited receipt scanning."}},
       {"@type": "Question", "name": "Are my receipts uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Receipts are processed on your device. If you use sync, your data is stored in your own private iCloud database, which the developers cannot access."}},
       {"@type": "Question", "name": "Can the developers see my receipts?", "acceptedAnswer": {"@type": "Answer", "text": "No. Synced data lives in your private iCloud database. We can't read it, we don't store it on our servers, and we don't share it with anyone."}},
       {"@type": "Question", "name": "Does it work on my Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Saved receipts and flagged duplicates sync between your iPhone and Mac through iCloud when you're signed in to the same Apple Account."}},
@@ -33,6 +35,7 @@
   </script>
 </head>
 <body>
+<!-- header:start -->
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/">
@@ -40,12 +43,14 @@
         Dupe Detective
       </a>
       <nav class="nav" aria-label="Main">
+        <a href="/#how">How it works</a>
         <a href="/faq" aria-current="page">FAQ</a>
         <a href="/blog/">Blog</a>
-        <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy</a>
+        <a href="/about">About</a>
       </nav>
     </div>
   </header>
+<!-- header:end -->
 
   <main class="wrap">
     <div class="page-head">
@@ -59,6 +64,14 @@
       <details open>
         <summary>What does Dupe Detective do?</summary>
         <div><p>You scan a paper receipt with your iPhone camera, and the app reads the line items and highlights anything that appears more than once, such as an item scanned twice at the register.</p></div>
+      </details>
+      <details>
+        <summary>Which stores does Dupe Detective work with?</summary>
+        <div><p>It works with receipts from Costco, Kroger, Fry's, Sam's Club, Walmart and most major grocery stores. You can scan a paper receipt or import a digital one.</p></div>
+      </details>
+      <details>
+        <summary>Is Dupe Detective free?</summary>
+        <div><p>Yes. It's free to download with no subscription required. An optional Pro upgrade unlocks unlimited receipt scanning.</p></div>
       </details>
       <details>
         <summary>Is a duplicate item always a mistake?</summary>
@@ -106,16 +119,34 @@
     </div>
   </main>
 
+<!-- footer:start -->
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 Dupe Detective · support@dupedetective.tech</span>
-      <nav aria-label="Footer">
-        <a href="/faq">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy Policy</a>
-        <a href="mailto:support@dupedetective.tech">Contact</a>
-      </nav>
+      <div class="footer-cols">
+        <nav aria-label="Get the app">
+          <h2>Get the app</h2>
+          <a href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">Download for iPhone</a>
+          <a href="https://apps.apple.com/us/app/dupedetective-receipt-scanner/id6773174333">Download for Mac</a>
+          <a href="/#how">How Dupe Detective works</a>
+          <a href="/faq">Receipt scanner FAQ</a>
+        </nav>
+        <nav aria-label="Learn">
+          <h2>Learn</h2>
+          <a href="/checkout-overcharge-statistics">Checkout overcharge statistics 2026</a>
+          <a href="/blog/why-was-i-charged-twice">Why was I charged twice?</a>
+          <a href="/blog/charged-twice-grocery-store">Charged twice at the grocery store</a>
+          <a href="/blog/">All guides</a>
+        </nav>
+        <nav aria-label="Company">
+          <h2>Company</h2>
+          <a href="/about">About Dupe Detective</a>
+          <a href="https://chaffeesapps.github.io/dupedetective-privacy/">Privacy policy</a>
+          <a href="mailto:support@dupedetective.tech">Contact support</a>
+        </nav>
+      </div>
+      <p class="footer-legal">© 2026 Dupe Detective · support@dupedetective.tech</p>
     </div>
   </footer>
+<!-- footer:end -->
 </body>
 </html>

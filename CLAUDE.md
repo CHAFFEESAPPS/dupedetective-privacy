@@ -13,14 +13,17 @@ Marketing site and privacy policy for **Dupe Detective: Receipt Scanner**, an iP
 | `index.html` (repo root) | Privacy policy. The URL in App Store Connect points here. Don't move it. | GitHub Pages: https://chaffeesapps.github.io/dupedetective-privacy/ |
 | `website/` | Marketing site: landing page, FAQ, blog | Cloudflare Pages, project `dupedetective`, production branch `main`, no build command, output dir `website`. Custom domain https://dupedetective.tech |
 | `content/blog/*.html` | Blog post sources (front-matter comment + body HTML) | — |
-| `scripts/build_site.py` | Generates `website/blog/*`, `sitemap.xml`, `robots.txt`, `llms.txt`, and the homepage Guides list | — |
+| `scripts/build_site.py` | Generates `website/blog/*`, `sitemap.xml`, `robots.txt`, `llms.txt`, the homepage Guides list, and the shared header and footer on every page | — |
+| `website/images/` | App Store screenshots (WebP, 600px wide) | — |
 
 Pushing to `main` deploys the site automatically via Cloudflare.
 
 ## Working on the site
 
 - **Add a blog post:** create `content/blog/<slug>.html` with `title`, `description`, `date`, `answer` in the top comment. Add the slug to `POSTS` and `RELATED` in `scripts/build_site.py`. Run `python3 scripts/build_site.py`. Commit both `content/` and `website/`.
-- **Never hand-edit** `website/blog/*`, `sitemap.xml`, `robots.txt` or `llms.txt`. They're generated. `website/index.html`, `website/faq.html`, `website/styles.css` and `website/404.html` are hand-edited.
+- **Never hand-edit** `website/blog/*`, `sitemap.xml`, `robots.txt` or `llms.txt`. They're generated. `website/index.html`, `website/faq.html`, `website/about.html`, `website/checkout-overcharge-statistics.html`, `website/styles.css` and `website/404.html` are hand-edited, except for the blocks between `<!-- header:start/end -->`, `<!-- footer:start/end -->` and `<!-- guides:start/end -->` markers, which the build script fills in.
+- **Header and footer** are defined once in `scripts/build_site.py` (`header()` and `FOOTER`). The footer carries the priority pages (download links, How it works, FAQ, statistics, About). A new hand-edited page needs the markers and an entry in `STATIC_PAGES`.
+- **Statistics page** (`/checkout-overcharge-statistics`): only cite government, university or established consumer-publication sources, link the original, and give sample and dates beside each figure. Review quarterly and update the "Last reviewed" date and `dateModified`.
 - Internal links use clean root-relative URLs (`/faq`, `/blog/<slug>`), matching the canonical tags.
 - When FAQ answers change, update both the visible text and the FAQPage JSON-LD in `website/faq.html`.
 
@@ -33,8 +36,8 @@ Pushing to `main` deploys the site automatically via Cloudflare.
 
 ## Open items
 
-1. Read the SEO spec in this X post and apply it: https://x.com/borjafat/status/2104896885173436464 (couldn't be reached from the cloud environment).
-2. Pull screenshots from the App Store listing and add them to the homepage "How it works" section (`#how` in `website/index.html`). Save them as optimized images in `website/images/` with descriptive alt text.
+1. ~~Apply the SEO spec from https://x.com/borjafat/status/2104896885173436464~~ Done: About page, statistics page, footer with priority links. Still needed from the owner for `website/about.html` (see the TODO comment there): a sentence or two on their background and why they built the app, plus a LinkedIn or other profile link. Original research for the statistics page would also help (for example an opt-in in-app survey); the app is on-device, so there's no receipt data to draw on.
+2. ~~Add App Store screenshots to "How it works"~~ Done.
 3. Add `www.dupedetective.tech` as a Cloudflare custom domain and redirect it to the apex domain (Cloudflare dashboard → Rules → Redirect Rules).
 4. Set up Google Search Console for dupedetective.tech and submit `https://dupedetective.tech/sitemap.xml`.
 5. Privacy policy (`index.html` at root) fixes, discussed but not made yet:

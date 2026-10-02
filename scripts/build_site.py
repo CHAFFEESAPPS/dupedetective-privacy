@@ -112,9 +112,10 @@ def header(current):
         Dupe Detective
       </a>
       <nav class="nav" aria-label="Main">
+        {link("/#how", "How it works", "how")}
         {link("/faq", "FAQ", "faq")}
         {link("/blog/", "Blog", "blog")}
-        <a href="{POLICY_URL}">Privacy</a>
+        {link("/about", "About", "about")}
       </nav>
     </div>
   </header>"""
@@ -122,15 +123,45 @@ def header(current):
 
 FOOTER = f"""  <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 Dupe Detective · {EMAIL}</span>
-      <nav aria-label="Footer">
-        <a href="/faq">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="{POLICY_URL}">Privacy Policy</a>
-        <a href="mailto:{EMAIL}">Contact</a>
-      </nav>
+      <div class="footer-cols">
+        <nav aria-label="Get the app">
+          <h2>Get the app</h2>
+          <a href="{APP_URL}">Download for iPhone</a>
+          <a href="{APP_URL}">Download for Mac</a>
+          <a href="/#how">How Dupe Detective works</a>
+          <a href="/faq">Receipt scanner FAQ</a>
+        </nav>
+        <nav aria-label="Learn">
+          <h2>Learn</h2>
+          <a href="/checkout-overcharge-statistics">Checkout overcharge statistics 2026</a>
+          <a href="/blog/why-was-i-charged-twice">Why was I charged twice?</a>
+          <a href="/blog/charged-twice-grocery-store">Charged twice at the grocery store</a>
+          <a href="/blog/">All guides</a>
+        </nav>
+        <nav aria-label="Company">
+          <h2>Company</h2>
+          <a href="/about">About Dupe Detective</a>
+          <a href="{POLICY_URL}">Privacy policy</a>
+          <a href="mailto:{EMAIL}">Contact support</a>
+        </nav>
+      </div>
+      <p class="footer-legal">© 2026 Dupe Detective · {EMAIL}</p>
     </div>
   </footer>"""
+
+# Hand-written pages: (file, nav key). Their header and footer are replaced
+# between <!-- header:start/end --> and <!-- footer:start/end --> markers.
+STATIC_PAGES = [
+    ("index.html", "home"),
+    ("faq.html", "faq"),
+    ("about.html", "about"),
+    ("checkout-overcharge-statistics.html", "stats"),
+]
+
+
+def inject(text, name, block):
+    return re.sub(rf"(<!-- {name}:start -->\n).*?(<!-- {name}:end -->)",
+                  lambda m: m.group(1) + block + "\n" + m.group(2), text, flags=re.S)
 
 
 def ld(obj):
@@ -254,15 +285,17 @@ def main():
         (blog / f"{p['slug']}.html").write_text(post_page(p, posts))
     (blog / "index.html").write_text(blog_index(ordered))
 
-    # Homepage "Guides" list between markers.
-    index = SITE / "index.html"
-    text = index.read_text()
-    text = re.sub(r"(<!-- guides:start -->\n).*?(<!-- guides:end -->)",
-                  lambda m: m.group(1) + home_guides(ordered) + "\n" + m.group(2), text, flags=re.S)
-    index.write_text(text)
+    for name, key in STATIC_PAGES:
+        page = SITE / name
+        text = page.read_text()
+        text = inject(text, "header", header(key))
+        text = inject(text, "footer", FOOTER)
+        text = inject(text, "guides", home_guides(ordered))
+        page.write_text(text)
 
     latest = max(p.get("updated", p["date"]) for p in ordered)
-    urls = [("/", latest), ("/faq", latest), ("/blog/", latest)] + [
+    urls = [("/", latest), ("/faq", latest), ("/about", latest),
+            ("/checkout-overcharge-statistics", latest), ("/blog/", latest)] + [
         (f"/blog/{p['slug']}", p.get("updated", p["date"])) for p in ordered
     ]
     (SITE / "sitemap.xml").write_text(
@@ -295,7 +328,10 @@ def main():
         f"- Privacy policy: {POLICY_URL}\n\n"
         "## Pages\n\n"
         f"- [Home]({BASE}/): what the app does and how it works\n"
-        f"- [FAQ]({BASE}/faq): privacy, iCloud sync, deleting data, refunds\n\n"
+        f"- [FAQ]({BASE}/faq): privacy, iCloud sync, deleting data, refunds\n"
+        f"- [About]({BASE}/about): what Dupe Detective does, who it's for and who makes it\n"
+        f"- [Checkout overcharge statistics 2026]({BASE}/checkout-overcharge-statistics): "
+        "sourced figures on how often stores overcharge at the register\n\n"
         "## Guides\n\n"
         + "".join(f"- [{p['title']}]({p['url']}): {p['answer']}\n" for p in ordered)
     )

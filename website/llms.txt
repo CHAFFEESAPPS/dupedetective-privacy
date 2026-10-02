@@ -10,6 +10,8 @@
 
 - [Home](https://dupedetective.tech/): what the app does and how it works
 - [FAQ](https://dupedetective.tech/faq): privacy, iCloud sync, deleting data, refunds
+- [About](https://dupedetective.tech/about): what Dupe Detective does, who it's for and who makes it
+- [Checkout overcharge statistics 2026](https://dupedetective.tech/checkout-overcharge-statistics): sourced figures on how often stores overcharge at the register
 
 ## Guides
 
