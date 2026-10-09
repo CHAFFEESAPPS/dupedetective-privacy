@@ -53,3 +53,4 @@ Pushing to `main` deploys the site automatically via Cloudflare.
    - "Anonymous usage analytics" conflicts with "doesn't transmit data to third parties". Need to know which analytics, if any.
    - Missing sections: data retention, children's privacy, policy changes.
 6. Confirm Zoho email still works after the nameserver move to Cloudflare (MX, SPF, DKIM records).
+7. **App idea (later):** Sam's Club prints a repeated item as one line with quantity 2+, so the app's repeated-line check misses it there. Consider also highlighting any line with quantity above 1 for the shopper to confirm. Until then, don't claim the app catches Sam's Club double scans (the 2026-10-08 Costco/Walmart/Sam's post avoids it). The homepage and FAQ still list Sam's Club as supported; decide whether to qualify that.
