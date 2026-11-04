@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects. Addresses people and reviewers type by habit.
+/privacy   https://chaffeesapps.github.io/dupedetective-privacy/   301
+/support   /faq   301
