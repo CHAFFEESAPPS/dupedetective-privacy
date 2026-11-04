@@ -211,10 +211,11 @@ def post_page(p, posts):
         tip = """      <p class="tip"><strong>Skip the hassle next time.</strong> Scan your receipt with <a href="/">Dupe Detective</a> before you leave the store. It takes a few seconds, and a double charge caught at the register is fixed on the spot.</p>"""
         cta = f"""      <aside class="app-cta">
         <div>
-          <h2>Scan it before you leave the store</h2>
-          <p>Dupe Detective checks your receipt in a few seconds and highlights anything you were charged for twice, so you can get it fixed at the register instead of disputing it later.</p>
+          <h2>Find double charges before you leave the store</h2>
+          <p>Snap your receipt and Dupe Detective highlights any item that was charged twice, so you can get it fixed at the counter instead of on the phone with your bank next week. Works with Costco, Walmart, Target, Kroger and most grocery stores.</p>
+          <p class="cta-fine">iPhone, iPad and Mac &middot; free download with 3 free scans, then a 7-day trial and $4.99 a year</p>
         </div>
-        <a class="btn btn-primary" href="{APP_URL}">Download on the App Store</a>
+        <a class="btn btn-primary" href="{APP_URL}">Try 3 free scans</a>
       </aside>"""
     main = f"""  <main class="wrap">
     <article class="article prose">

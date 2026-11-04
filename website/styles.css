@@ -485,6 +485,7 @@ time, .byline { font-size: var(--step--1); color: var(--muted); }
 .app-cta > div { display: grid; gap: 6px; min-width: 0; flex: 1 1 280px; }
 .app-cta h2 { font-size: 1.35rem; letter-spacing: -0.02em; }
 .app-cta p { color: var(--deep-muted); }
+.app-cta .cta-fine { font-size: var(--step--1); }
 .app-cta .btn-primary { background: var(--deep-ink); color: var(--deep); }
 
 .related { margin-top: 48px; display: grid; gap: 12px; }
