@@ -156,6 +156,17 @@ FOOTER = f"""  <footer class="site-footer">
 
 # Hand-written pages: (file, nav key). Their header and footer are replaced
 # between <!-- header:start/end --> and <!-- footer:start/end --> markers.
+# Hand-edited pages: the date their CONTENT last changed. Google: don't move a
+# date unless the content substantially changed, so bump these by hand only then
+# (a header/footer rebuild doesn't count). Until 2026-11-26 they copied the newest
+# post date, which told Google the FAQ changed whenever a post did.
+STATIC_LASTMOD = {
+    "/faq": "2026-10-31",
+    "/about": "2026-10-02",
+    "/checkout-overcharge-statistics": "2026-10-02",
+    "/for-business": "2026-10-02",
+}
+
 STATIC_PAGES = [
     ("index.html", "home"),
     ("faq.html", "faq"),
@@ -327,9 +338,10 @@ def main():
         text = inject(text, "guides", home_guides(ordered))
         page.write_text(text)
 
+    # The homepage and blog index list post titles, so a post change changes them.
     latest = max(p.get("updated", p["date"]) for p in ordered)
-    urls = [("/", latest), ("/faq", latest), ("/about", latest),
-            ("/checkout-overcharge-statistics", latest), ("/for-business", latest), ("/blog/", latest)] + [
+    urls = [("/", latest), ("/blog/", latest)] + [
+        (u, d) for u, d in STATIC_LASTMOD.items()] + [
         (f"/blog/{p['slug']}", p.get("updated", p["date"])) for p in ordered
     ]
     (SITE / "sitemap.xml").write_text(
