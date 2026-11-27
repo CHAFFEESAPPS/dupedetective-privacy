@@ -319,6 +319,31 @@ def home_guides(posts):
     )
 
 
+def page_check():
+    """Every public page needs exactly one <h1> and a canonical pointing at itself.
+    A page copied from another one tends to keep the original's canonical, which
+    tells Google to index the original instead. Cloudflare deploys on push, so the
+    build is the only place to catch it: the build fails and nothing gets committed."""
+    problems = []
+    for f in sorted(SITE.rglob("*.html")):
+        rel = f.relative_to(SITE).as_posix()
+        if rel == "404.html":
+            continue
+        text = f.read_text()
+        h1s = len(re.findall(r"<h1[ >]", text))
+        if h1s != 1:
+            problems.append(f"{rel} has {h1s} <h1> tags (needs exactly 1)")
+        path = "/" + rel
+        path = path[: -len("index.html")] if path.endswith("index.html") else path[: -len(".html")]
+        want = BASE + path
+        got = re.search(r'<link rel="canonical" href="([^"]*)"', text)
+        got = got.group(1) if got else "missing"
+        if got != want:
+            problems.append(f"{rel} canonical is '{got}' (should be {want})")
+    if problems:
+        raise SystemExit("Page check failed:\n  " + "\n  ".join(problems))
+
+
 def main():
     posts = {s: parse(s) for s in POSTS}
     ordered = [posts[s] for s in POSTS]
@@ -399,6 +424,7 @@ def main():
         "## Guides\n\n"
         + "".join(f"- [{p['title']}]({p['url']}): {p['answer']}\n" for p in ordered)
     )
+    page_check()
     print(f"Built {len(ordered)} posts, blog index, sitemap.xml, robots.txt, llms.txt")
 
 
